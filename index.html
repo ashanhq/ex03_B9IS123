@@ -1,30 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Exercise 3</title>
-    <!-- Link the external JS file -->
-    <script src="ex3.js" defer></script>
+  <meta charset="UTF-8">
+  <title>Exercise 3</title>
+  <script src="ex3.js" defer></script>
 </head>
 <body>
-    <h1>Exercise 3</h1>
+  <h1>Exercise 3</h1>
 
-    <p>
-        Sum of multiples of a or b in list l.<br>
-        <label for="a1">A:</label> <input type="text" id="a1" placeholder="e.g. 2"><br>
-        <label for="b1">B:</label> <input type="text" id="b1" placeholder="e.g. 3"><br>
-        <label for="l">L:</label> <input type="text" id="l" placeholder="e.g. 1 2 3 4 5 6 7 8 9 10"><br>
-        <button onclick="eulerlist()">Press for solution to Project Euler</button>
-    </p>
+  <p>Sum of multiples of a or b in list l.</p>
+  <label for="a1">A:</label>
+  <input type="text" id="a1"><br>
 
-    <hr>
+  <label for="b1">B:</label>
+  <input type="text" id="b1"><br>
 
-    <p>
-        Part 2: Compute the sum of multiples of elements in list A found in list L.<br>
-        <label for="aList">A:</label> <input type="text" id="aList" placeholder="e.g. 2 3 5">
-        <label for="mList">L:</label> <input type="text" id="mList" placeholder="e.g. 1 2 3 4 5 6 7 8 9 10"><br>
-        <button onclick="euler2Lists()">Press for custom sum (list length 2)</button>
-        <button onclick="euler2Lists1()">Press for custom sum (any list length)</button>
-    </p>
+  <label for="l">L:</label>
+  <input type="text" id="l"><br>
+
+  <p>
+    <button onclick="eulerlist()">Press for solution to project Euler</button>
+  </p>
+
+  <p>
+    Part 1: compute the sum of multiples of elements in list a, found in list l.  
+    List a is of length 2.  
+    <br>
+    Part 2: compute the sum of multiples of elements in list a, found in list l (any length).
+  </p>
+
+  <label for="aList">A:</label>
+  <input type="text" id="aList">
+
+  <label for="mList">L:</label>
+  <input type="text" id="mList"><br><br>
+
+  <button onclick="euler2Lists()">Press for custom sum of multiples</button>
+  <button onclick="euler2Lists1()">Press for custom sum of multiples</button>
 </body>
 </html>
