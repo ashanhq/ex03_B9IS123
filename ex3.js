@@ -1,24 +1,39 @@
-let listEuler1=(a,b,l)=>0;//obviously wrong - compute the sum of multiples of a or b in list l
-let listEuler2=(a,l)=>0;//obviously wrong - compute the sum of multiples in list a found in list l
-let listEuler3=(a,l)=>0;//obviously wrong - compute the sum of multiples in list a found in list l
+let listEuler1 = (a, b, l) => {
+    return l
+        .filter(x => x % a === 0 || x % b === 0)
+        .reduce((sum, x) => sum + x, 0);
+};
 
-let eulerlist=()=>
-{
-    a=2//can un-hardcode
-    b=3
-    l=[1,2,3,4,5,6,7,9,10,10,10]  //document.getElementById('l').value.split(" ").map((x=>parseInt(x)); // if l is space separated numbers
-    //call listEuler1 and alert. - compute the sum of multiples of a or b in list l
-}
-let euler2Lists=()=>
-{
-    a=[2,3]//can un-hardcode
-    l=[1,2,3,4,5,6,7,9,10,10,10]
-    //call listEuler2 and alert.
-}
+let listEuler2 = (a, l) => {
+    return l
+        .filter(x => a.some(y => x % y === 0))
+        .reduce((sum, x) => sum + x, 0);
+};
 
-let euler2Lists1=()=>
-{
-    a=[2,3,5]//can un-hardcode
-    l=[1,2,3,4,5,6,7,9,10,10,10]
-    //call listEuler3 and alert.
-}
+let listEuler3 = (a, l) => {
+    return l
+        .filter(x => a.some(y => x % y === 0))
+        .reduce((sum, x) => sum + x, 0);
+};
+
+let eulerlist = () => {
+    let a = parseInt(document.getElementById('a1').value) || 2;
+    let b = parseInt(document.getElementById('b1').value) || 3;
+    let l = document.getElementById('l').value.split(" ").map(x => parseInt(x));
+    let result = listEuler1(a, b, l);
+    alert("Sum of multiples of " + a + " or " + b + " = " + result);
+};
+
+let euler2Lists = () => {
+    let a = document.getElementById('aList').value.split(" ").map(x => parseInt(x));
+    let l = document.getElementById('mList').value.split(" ").map(x => parseInt(x));
+    let result = listEuler2(a, l);
+    alert("Sum of multiples (length 2 list) = " + result);
+};
+
+let euler2Lists1 = () => {
+    let a = document.getElementById('aList').value.split(" ").map(x => parseInt(x));
+    let l = document.getElementById('mList').value.split(" ").map(x => parseInt(x));
+    let result = listEuler3(a, l);
+    alert("Sum of multiples (any length list) = " + result);
+};
