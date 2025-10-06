@@ -1,6 +1,5 @@
 // ex3.js
 
-// Function for the first problem: sum of multiples of a or b in list l
 function eulerlist() {
   const a = parseInt(document.getElementById("a1").value);
   const b = parseInt(document.getElementById("b1").value);
@@ -16,7 +15,6 @@ function eulerlist() {
   alert(`Sum of multiples of ${a} or ${b}: ${sum}`);
 }
 
-// Function for any-length list of divisors and list of numbers
 function euler2Lists() {
   const aList = document.getElementById("aList").value
     .split(",")
@@ -33,29 +31,4 @@ function euler2Lists() {
     .reduce((acc, val) => acc + val, 0);
 
   alert(`Sum of multiples of ${aList.join(", ")}: ${sum}`);
-}
-
-// Optional: an alternate version (same logic, different approach)
-function euler2Lists1() {
-  const aList = document.getElementById("aList").value
-    .split(",")
-    .map(Number)
-    .filter(x => !isNaN(x));
-
-  const mList = document.getElementById("mList").value
-    .split(",")
-    .map(Number)
-    .filter(x => !isNaN(x));
-
-  let total = 0;
-  for (const m of mList) {
-    for (const a of aList) {
-      if (m % a === 0) {
-        total += m;
-        break;
-      }
-    }
-  }
-
-  alert(`(Method 2) Sum of multiples of ${aList.join(", ")}: ${total}`);
 }
